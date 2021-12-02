@@ -1,5 +1,5 @@
 from Game.ForwardModel import ForwardModel
-from Game.Game import Game
+from Game.BriscaGame import BriscaGame
 from Game.GameState import GameState
 from Game.Heuristic import Heuristic
 from Players.AlwaysFirstPlayer import AlwaysFirstPlayer
@@ -36,7 +36,7 @@ if __name__ == '__main__':
     n_matches = 10
     controlling_time = False
 
-    game = Game()
+    game = BriscaGame()
     game_state = GameState()
     heuristic = Heuristic()
     forward_model = ForwardModel()

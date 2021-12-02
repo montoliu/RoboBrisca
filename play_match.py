@@ -7,7 +7,7 @@ from Players.AlwaysFirstPlayer import AlwaysFirstPlayer
 from Players.HumanPlayer import HumanPlayer
 from Players.SlowPlayer import SlowPlayer
 from Players.RandomPlayer import RandomPlayer
-from Game.Game import Game
+from Game.BriscaGame import BriscaGame
 
 
 # ---------------------------------------------------------------------------
@@ -17,10 +17,12 @@ from Game.Game import Game
 if __name__ == '__main__':
     budget = 2               # Time to think for AI in second
     verbose = True           # print messages ON/OFF
-    controlling_time = True  # If the player time to think is going to be controlled ON/OFF
+    controlling_time = True  # If the player time to think is going to be controlled True/False
+    save_game = True         # If the game is saved to be studied in the future True/False
+    save_name = "Out/game.txt"
     # random.seed(1)         # random seed for debug
 
-    game = Game()
+    game = BriscaGame()
     game_state = GameState()
     heuristic = Heuristic()
     forward_model = ForwardModel()
@@ -29,6 +31,9 @@ if __name__ == '__main__':
     game.reset(game_state, player_id_as_first)                             # Game initialization
 
     l_players = [RandomPlayer(), AlwaysFirstPlayer()]                      # Players
+
+    if save_game:
+        game.save_game_on(save_name)
 
     game.run(game_state, forward_model, heuristic, l_players, budget, verbose, controlling_time)
 

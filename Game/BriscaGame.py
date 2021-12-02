@@ -5,7 +5,11 @@ from Game.Card import Card
 from Game.CardCollection import CardCollection
 
 
-class Game:
+class BriscaGame:
+    def __init__(self):
+        self.save_game = False
+        self.save_file = None
+
     # Initilize game state
     def reset(self, game_state, player_id_as_first):
         self.create_main_deck(game_state.main_deck)
@@ -49,14 +53,24 @@ class Game:
     def run(self, game_state, forward_model, heuristic, l_players, budget, verbose, controlling_time):
         # Brisca is a 4 players game, then 1st bot acts as player 0 and 2, and 2nd one acts as 1 and 3.
         players = [l_players[0], l_players[1], l_players[0], l_players[1]]
+        if self.save_game:
+            self.save_file.write(str(game_state.main_deck) + ", " + str(game_state.turn) + "\n")
+
         while not game_state.is_terminal():
             for i in range(game_state.n_players):
-                self.player_turn(game_state, forward_model, heuristic, players[game_state.turn],
-                                 budget, verbose, controlling_time)
+                prev_turn = game_state.turn
+
+                action, reward = self.player_turn(game_state, forward_model, heuristic, players[game_state.turn],
+                                                   budget, verbose, controlling_time)
+
+                if self.save_game:
+                    self.save_file.write(str(prev_turn) + ", " + str(action) + ", " + str(reward)+ "\n")
+
                 if game_state.is_terminal():
                     break
 
         forward_model.check_winner(game_state)
+        self.save_file.close()
 
     # ---------------------------------------------------------------------------
     # Performs a player turn
@@ -92,6 +106,8 @@ class Game:
         if verbose:
             print("Reward: " + str(reward))
 
+        return action, reward
+
     # ---------------------------------------------------------------------------
     # The player thinkg.
     # Returns the action to be played
@@ -106,4 +122,6 @@ class Game:
         l_actions = observation.get_list_actions()
         return random.choice(l_actions)
 
-
+    def save_game_on(self, filename):
+        self.save_game = True
+        self.save_file = open(filename, "w")
