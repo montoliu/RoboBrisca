@@ -31,10 +31,12 @@ def print_information(n_matches, l_players):
 # When there is a Tie, both players get 0.5 points
 # ---------------------------------------------------------------------------
 if __name__ == '__main__':
-    budget = 2                      # In second
-    verbose = False                 # print messages OFF
+    budget = 2               # Time to think for AI in second
+    verbose = False           # print messages ON/OFF
+    controlling_time = True  # If the player time to think is going to be controlled True/False
+    save_game = True         # If the game is saved to be studied in the future True/False
+    save_name = "Out/game"
     n_matches = 10
-    controlling_time = False
 
     game = BriscaGame()
     game_state = GameState()
@@ -58,11 +60,19 @@ if __name__ == '__main__':
             for n in range(n_matches):
                 # player i as first
                 game.reset(game_state, 0)
+                if save_game:
+                    fname = save_name + "_" + str(i) + "_" + str(j) + "_" + str(n) + ".txt"
+                    game.save_game_on(fname)
+
                 game.run(game_state, forward_model, heuristic, players, budget, verbose, controlling_time)
                 actualize_points(l_points, game_state.winner, i, j)
 
                 # player j as first
                 game.reset(game_state, 1)
+                if save_game:
+                    fname = save_name + "_" + str(j) + "_" + str(i) + "_" + str(n) + ".txt"
+                    game.save_game_on(fname)
+
                 game.run(game_state, forward_model, heuristic, players, budget, verbose,controlling_time)
                 actualize_points(l_points, game_state.winner, i, j)
 

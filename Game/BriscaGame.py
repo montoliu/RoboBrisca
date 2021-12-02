@@ -12,6 +12,7 @@ class BriscaGame:
 
     # Initilize game state
     def reset(self, game_state, player_id_as_first):
+        self.save_file = None
         self.create_main_deck(game_state.main_deck)
         game_state.n_players = 4
 
@@ -61,10 +62,10 @@ class BriscaGame:
                 prev_turn = game_state.turn
 
                 action, reward = self.player_turn(game_state, forward_model, heuristic, players[game_state.turn],
-                                                   budget, verbose, controlling_time)
+                                                  budget, verbose, controlling_time)
 
                 if self.save_game:
-                    self.save_file.write(str(prev_turn) + ", " + str(action) + ", " + str(reward)+ "\n")
+                    self.save_file.write(str(prev_turn) + ", " + str(action) + ", " + str(reward) + "\n")
 
                 if game_state.is_terminal():
                     break
