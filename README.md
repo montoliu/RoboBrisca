@@ -33,12 +33,14 @@ tiene que ser estudiante de la UNiversitat Jaume I.
 
 ## Reglas de la competición
 1. Para apuntarse a la competición hay que rellenar el formulario **TBD**
+
 2. Antes de la fecha límite, los equipos tendrán que enviar a la dirección
 de correo montoliu@uji.es un fichero python con el siguiente formato:
 
 equipo.py
 
 donde *equipo* es el nombre del equipo. La fecha límite es el día **TBD**.
+
 3. El día **TBD** se realizará la primera fase de la competición. En esta
 primera fase participarán todos los equipos que hayan enviado su bot,
 en el formato correcto, antes de la fecha límite. En esta fase, los bots jugaran 
@@ -46,15 +48,20 @@ una serie de partidas contra unos bots realizados por los organizadores de
 la competición y que no se harán públicos. Fruto de esta fase, se realizará una
 clasificación donde los equipos con más victorias contra los bots de la organización,
 ocuparán los puestos más altos. Los 8 primeros se clasificarán para la segunda fase.
+
 4. Una vez finalizada la primera fase, se harán publicos los resultados y el código
 fuente de los bots de la organización. También se proporcionará, a cada equipo,
 un fichero donde se podrá estudiar las partidas que ha jugado su bot.
+
 5. Los equipos podrán modificar su bot y enviar una nueva versión antes del día **TBD**
+
 6. El día **TBD** se realizarán los cuartos de final entre los equipos 1-8, 2-8, 3-6 y 4-5
 según la clasificación obtenida en la primera frase. Posteriormente se realizarán
 las semifinales (con los ganadores de los cuartos de final). Finalmente se realizará
 el partido por el tercer puesto y la gran final.
+
 7. Se retrasmitiraá todo
+
 8. Como serán las partidas en cada fase
 
 ## Reglas de la Brisca
