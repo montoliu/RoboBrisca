@@ -107,6 +107,37 @@ Para una descripción completa del juego,
 consultar [https://es.wikipedia.org/wiki/Brisca](https://es.wikipedia.org/wiki/Brisca)
 
 ## Como realizar mi primer bot
+Para implementar un bot hay que crear un fichero con el nombre del bot, por ejemplo, si el 
+equipo se llama _IALovers_, el bot se puede llamar _IALoversPlayer.py_. Dentro del fichero
+se debe crear una clase con el mismo nombre que heredará de la clase _Player_ y que debe seguir
+la siguiente plantilla:
+
+```Python
+from Players.Player import Player
+
+
+class IALoversPlayer(Player):
+    def think(self, observation, budget):
+        list_actions = observation.get_list_actions()
+        action = Tu codigo para seleccionar una acción incluida en list_actions
+        return action
+
+    def __str__(self):
+        return "IALoversPlayer"
+```
+Hay dos cosas importantes que debes tener en cuenta:
+1. la función think debe devolver una acción antes del número de segundos
+indicados en budget. Si tarda más, el sistema seleccionará una acción al
+azar de entre las posibles y no hará caso a tu código.
+2. Observation es la visión desde el punto de vista del jugador del 
+estado del juego. Esto quiere decir que será posible acceder a:
+- Las cartas del jugador
+- Las cartas que ha ganado cada jugador
+- La carta que es triunfo
+3. El resto de partes del estado del juego, como las cartas de los otros
+jugadores y las cartas en la baraja, se pueden acceder desde observation,
+pero serán una posible configuración de todas las posibles existentes,
+no reflejando el estado actual de la partida.
 
 ## Breve explicación del código fuente
 
