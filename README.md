@@ -18,7 +18,7 @@ Se puede participar tanto de forma individual, como en equipo.
 Para participar hay que rellenar el siguiente formulario **TBD** donde
 se deberá especificar los siguiente datos:
 - El nombre del equipo.
-- El nombre de los integrantes del equipo y si son de la Universitat Jaume I o no.
+- El nombre de los integrantes del equipo y si son de la *Universitat Jaume I* o no.
 - Una dirección email de contacto.
 
 ## Premios
@@ -69,21 +69,21 @@ el número máximo de puntos que se puede obtener es 100.
 Se juega con la baraja española de 40 cartas (sin ochos ni nueves).
 
 Al comenzar la partida se barajan todas las cartas y se reparte una carta a cada jugador
-empiezando con el jugador que va de primero. Siguiendo el mismo procedimiento, se reperten
-las otras dos cartas a los jugadores.
+empezando con el jugador que va de primero. Siguiendo el mismo procedimiento, se reparten
+ dos cartas más a los jugadores. Por lo tanto, cada jugador recibirá 3 cartas.
 
 La primera carta no repartida es el triunfo que se enseña a todos los jugadores y se situa
 al final de la baraja.
 
-En cada ronda, rl jugador que va de primero tira una carta de las tres que tiene, el siguiente jugador
+En cada mano (o ronda), el jugador que va de primero juega una carta de las tres que tiene, el siguiente jugador
 realiza la misma acción y lo mismo ocurre con los otros dos. 
 
-Al finalizar la ronda, se mira quien es el ganador siguiendo las siguientes normas:
-a) En caso de que todas las cartas sean del mismo palo, gana el que haya puesto la más alta.
-b) En caso de que se echen cartas de diferente palo que no sean triunfo, gana el que haya puesto la carta más alta del palo del que haya echado la primera carta.
-c) En caso de que alguien eche un triunfo, gana el que haya echado el triunfo más alto, independientemente del valor de las cartas de otro palo que se hayan echado.
+Al finalizar la mano, se mira quien es el ganador siguiendo las siguientes normas:
+- En caso de que todas las cartas sean del mismo palo, gana el que haya puesto la más alta.
+- En caso de que se echen cartas de diferente palo que no sean triunfo, gana el que haya puesto la carta más alta del palo del que haya echado la primera carta.
+- En caso de que alguien eche un triunfo, gana el que haya echado el triunfo más alto, independientemente del valor de las cartas de otro palo que se hayan echado.
 
-Tras esto, el jugador que haya ganado la ronda recoge las cartas 
+Tras esto, el jugador que haya ganado la mano recoge las cartas 
 y las coloca boca abajo frente a sí. Después los jugadores roban una carta del mazo 
 por turnos, comenzando el que haya ganado la mano. 
 
