@@ -32,6 +32,7 @@ de la competición.
 tiene que ser estudiante de la *Universitat Jaume I*.
 
 ## Reglas de la competición
+
 1. Para apuntarse a la competición hay que rellenar el formulario **TBD**.
 2. Antes de la fecha límite, los equipos apuntados tendrán que enviar, a la dirección
 de correo [montoliu@uji.es](), un programa escrito en Python, cuyo nombre de fichero tienen
@@ -44,8 +45,7 @@ primera fase, participarán todos los equipos que hayan enviado su bot,
 en el formato correcto, antes de la fecha límite. En esta fase, los bots jugaran 
 una serie de partidas contra tres bots realizados por los organizadores de
 la competición y que no serán públicos. Fruto de esta fase, se realizará una
-clasificación donde los equipos con más victorias contra los bots de la organización,
-ocuparán los puestos más altos. En caso de empate, se sortearán los puestos.
+clasificación donde los equipos con más victorias contra los bots de la organización, ocuparán los puestos más altos. En caso de empate, se sortearán los puestos.
 Los 8 primeros se clasificarán para la segunda fase.
 4. En la primera fase, cada bot jugará 100 partidas contra cada uno de los tres bots de
 la organización, 50 jugando como primero (y tercero) y 50 como segundo (y cuarto). Si se gana
@@ -63,6 +63,7 @@ el partido por el tercer puesto y la gran final.
 de primero (y tercero) la mitad de las veces. Cada victoria supondra un punto, por lo que,
 el número máximo de puntos que se puede obtener es 100.
 9. Ambas fases serán retrasmitidas en directo mediante **TBD**.
+
 
 ## Reglas de la Brisca
 Se juega con la baraja española de 40 cartas (sin ochos ni nueves).
