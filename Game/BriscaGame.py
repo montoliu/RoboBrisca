@@ -1,3 +1,9 @@
+# --------------------------------------------------------
+# - RoboBrisca
+# - BriscaGame
+# - Implemented by: Raul Montoliu (Dic 2021)
+# --------------------------------------------------------
+
 import random
 import func_timeout
 
@@ -51,12 +57,15 @@ class BriscaGame:
 
         deck.shuffle()
 
+    # run the game
     def run(self, game_state, forward_model, heuristic, l_players, budget, verbose, controlling_time):
         # Brisca is a 4 players game, then 1st bot acts as player 0 and 2, and 2nd one acts as 1 and 3.
         players = [l_players[0], l_players[1], l_players[0], l_players[1]]
+
         if self.save_game:
             self.save_file.write(str(game_state.main_deck) + ", " + str(game_state.turn) + "\n")
 
+        # run players' turns while game is not finished
         while not game_state.is_terminal():
             for i in range(game_state.n_players):
                 prev_turn = game_state.turn

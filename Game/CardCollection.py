@@ -1,3 +1,8 @@
+# --------------------------------------------------------
+# - RoboBrisca
+# - CardCollection
+# - Implemented by: Raul Montoliu (Dic 2021)
+# --------------------------------------------------------
 import random
 
 

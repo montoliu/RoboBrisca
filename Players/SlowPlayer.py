@@ -1,3 +1,8 @@
+# --------------------------------------------------------
+# - RoboBrisca
+# - SlowPlayer
+# - Implemented by: Raul Montoliu (Dic 2021)
+# --------------------------------------------------------
 import time
 from Players.Player import Player
 

@@ -1,3 +1,8 @@
+# --------------------------------------------------------
+# - RoboBrisca
+# - ForwardModel
+# - Implemented by: Raul Montoliu (Dic 2021)
+# --------------------------------------------------------
 from Game.Common import is_better_card, calculate_points
 
 
@@ -82,7 +87,12 @@ class ForwardModel:
 
         if p0_2 > p1_3:
             game_state.winner = 0
-        else:
+        elif p0_2 < p1_3:
             game_state.winner = 1
-
-
+        else:
+            # if there is a tie, the team with more cards is the winner
+            if game_state.won_cards[0].len() + game_state.won_cards[2].len() > \
+                    game_state.won_cards[1].len() + game_state.won_cards[3].len():
+                game_state.winner = 0
+            else:
+                game_state.winner = 1

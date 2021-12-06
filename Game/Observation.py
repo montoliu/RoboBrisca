@@ -1,3 +1,8 @@
+# --------------------------------------------------------
+# - RoboBrisca
+# - BriscaGame
+# - Implemented by: Raul Montoliu (Dic 2021)
+# --------------------------------------------------------
 from Game.Action import Action
 
 

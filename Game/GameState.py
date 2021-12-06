@@ -1,3 +1,8 @@
+# --------------------------------------------------------
+# - RoboBrisca
+# - BriscaGame
+# - Implemented by: Raul Montoliu (Dic 2021)
+# --------------------------------------------------------
 import random
 from Game.CardCollection import CardCollection
 from Game.Observation import Observation

@@ -1,3 +1,8 @@
+# --------------------------------------------------------
+# - RoboBrisca
+# - play_match main program: play a game between two bots
+# - Implemented by: Raul Montoliu (Dic 2021)
+# --------------------------------------------------------
 import random
 
 from Game.ForwardModel import ForwardModel
@@ -12,30 +17,30 @@ from Game.BriscaGame import BriscaGame
 
 # ---------------------------------------------------------------------------
 # MAIN: Play just one game between two players
-# When the match ends, game_state.winner has the player id of the winner or -1 if there is a tie
+# When the game ends, game_state.winner has the player id of the winner (0 or 1)
 # ---------------------------------------------------------------------------
 if __name__ == '__main__':
-    budget = 2               # Time to think for AI in second
-    verbose = True           # print messages ON/OFF
-    controlling_time = True  # If the player time to think is going to be controlled True/False
-    save_game = True         # If the game is saved to be studied in the future True/False
-    save_name = "Out/game.txt"
-    # random.seed(1)         # random seed for debug
+    budget = 1                  # Time to think for AI in second
+    verbose = True              # print messages ON/OFF
+    controlling_time = True     # If the player time to think is going to be controlled (True/False)
+    save_game = True            # If the game is saved to be studied in the future (True/False)
+    save_name = "Out/game.txt"  # Filename when the game is going to be saved
 
-    game = BriscaGame()
-    game_state = GameState()
-    heuristic = Heuristic()
-    forward_model = ForwardModel()
+    # Main objects for Brisca Game
+    game = BriscaGame()                  # Game class
+    game_state = GameState()             # Game state of the game
+    heuristic = Heuristic()              # Heuristic to known how good is to be in a particular game state
+    forward_model = ForwardModel()       # Rules of the game
 
-    player_id_as_first = random.choice(range(game_state.n_players))        # who starts
+    player_id_as_first = random.choice(range(game_state.n_players))        # who starts is determined randomly
     game.reset(game_state, player_id_as_first)                             # Game initialization
 
-    l_players = [RandomPlayer(), AlwaysFirstPlayer()]                      # Players
+    l_players = [RandomPlayer(), AlwaysFirstPlayer()]                      # list of Players
 
     if save_game:
         game.save_game_on(save_name)
 
-    game.run(game_state, forward_model, heuristic, l_players, budget, verbose, controlling_time)
+    game.run(game_state, forward_model, heuristic, l_players, budget, verbose, controlling_time)  # run the game
 
     if verbose:
         print("")
@@ -45,4 +50,3 @@ if __name__ == '__main__':
         else:
             print("*** There is a Tie.")
         print("*** ------------------------------------------------- ")
-

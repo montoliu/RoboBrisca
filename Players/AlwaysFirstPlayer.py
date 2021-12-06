@@ -1,3 +1,8 @@
+# --------------------------------------------------------
+# - RoboBrisca
+# - AlwaysFirstPlayer
+# - Implemented by: Raul Montoliu (Dic 2021)
+# --------------------------------------------------------
 from Players.Player import Player
 
 

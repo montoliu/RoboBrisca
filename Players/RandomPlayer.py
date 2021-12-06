@@ -1,3 +1,8 @@
+# --------------------------------------------------------
+# - RoboBrisca
+# - RandomPlayer
+# - Implemented by: Raul Montoliu (Dic 2021)
+# --------------------------------------------------------
 import random
 
 from Players.Player import Player

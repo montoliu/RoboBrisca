@@ -1,6 +1,14 @@
+# --------------------------------------------------------
+# - RoboBrisca
+# - AlwaysFirstPlayer
+# - Implemented by: Raul Montoliu (Dic 2021)
+# --------------------------------------------------------
 from Players.Player import Player
 
 
+# ---------------------------------------------------------------------------
+# Show a text UI and ask human player to select an action from the list
+# ---------------------------------------------------------------------------
 class HumanPlayer(Player):
     def think(self, observation, budget):
         list_actions = observation.get_list_actions()
