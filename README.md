@@ -19,24 +19,25 @@ pero también abierto a público en general, la programación de algoritmos
 de inteligencia artificial capaces de jugar de forma autónoma a
 juegos de cartas.
 
-Los organizadores de la competición son Raúl Montoliu y Diego Villabrille.
+Los organizadores de la competición son Raúl Montoliu (montoliu@uji.es) 
+y Diego Villabrille (diego.villabrille@uji.es).
 
 ## Quien puede participar
 La competición está abierta a todo el que quiera participar.
 Se puede participar tanto de forma individual, como en equipo.
 
 ## Cómo participar
-Para participar hay que rellenar el siguiente formulario **TBD** donde
+Para participar hay que rellenar el siguiente [formulario](https://forms.gle/zapBLhLhWcSuQ1mm6]) donde
 se deberá especificar los siguiente datos:
 - El nombre del equipo.
 - El nombre de los integrantes del equipo y si son de la *Universitat Jaume I* o no.
 - Una dirección email de contacto.
 
 ## Premios
-Los equipos que queden clasificados en los tres primeros puestos
-recibirán un diploma acreditativo.
+Todas las personas que participen recibirán un certificado acreditando su participación.
+Los equipos que queden clasificados en los tres primeros puestos recibirán además un diploma acreditativo.
 
-Además, existirá un premio **TBD** para los tres primeros equipos
+Además, existirá un premio, que será anunciado en el futuro, para los tres primeros equipos
 de la competición. 
 
 **IMPORTANTE**: Para obtar al premio, al menos un integrante de equipo
@@ -44,14 +45,14 @@ tiene que ser estudiante de la *Universitat Jaume I*.
 
 ## Reglas de la competición
 
-1. Para apuntarse a la competición hay que rellenar el formulario **TBD**.
+1. Para apuntarse a la competición hay que rellenar el  [formulario](https://forms.gle/zapBLhLhWcSuQ1mm6]).
 2. Antes de la fecha límite, los equipos apuntados tendrán que enviar, a la dirección
 de correo [montoliu@uji.es](), un programa escrito en *Python 3*. El nombre de fichero tienen
 que tener el siguiente formato: "equipo.py", donde *equipo* es el nombre del equipo. 
 Como la Brisca es un juego de cuatro jugadores en equipos de 2, el mismo bot se utilizará
-para los dos jugadores de cada equipo. La fecha límite es el día **TBD**.
+para los dos jugadores de cada equipo. La fecha límite es el día **3 de Abril de 2022 a las 23:59**.
 
-3. El día **TBD** se realizará la primera fase de la competición. En esta
+3. El día **7 de Abril de 2022 a las 20:00** se realizará la primera fase de la competición. En esta
 primera fase participarán todos los equipos que hayan enviado su bot antes de la fecha límite. En esta fase, los bots jugaran 
 una serie de partidas contra tres bots realizados por los organizadores de
 la competición y que no serán públicos. Fruto de esta fase, se realizará una
@@ -64,15 +65,16 @@ fase es de 300 puntos.
 5. Una vez finalizada la primera fase, se harán publicos los resultados y el código
 fuente de los bots de la organización. También se proporcionará a cada equipo,
 unos ficheros que servirán para estudiar las partidas que ha jugado su bot.
-6. Los equipos clasificados para la segunda fase podrán modificar su bot y enviar una nueva versión antes del día **TBD**.
-7. El día **TBD** se realizarán los cuartos de final entre los equipos 1-8, 2-7, 3-6 y 4-5
+6. Los equipos clasificados para la segunda fase podrán modificar su bot y enviar una
+nueva versión antes del día **1 de Mayo de 2022 a las 23:59**.
+7. El día **5 de Mayo de 2022 a las 20:00** se realizarán los cuartos de final entre los equipos 1-8, 2-7, 3-6 y 4-5
 según la clasificación obtenida en la primera frase. Posteriormente, se realizarán
 las semifinales (con los ganadores de los cuartos de final). Finalmente, se realizará
 el partido por el tercer puesto y la gran final.
 8. En la segunda fase, se jugarán 100 partidas entre los dos bots, en las que cada uno jugará 
 de primero (y tercero) la mitad de las veces. Cada victoria supondra un punto, por lo que,
 el número máximo de puntos que se puede obtener es 100.
-9. Ambas fases serán retrasmitidas en directo mediante **TBD**.
+9. Ambas fases serán retrasmitidas en directo mediante un canal que se anunciará próximamente.
 10. Al participar en la competición se acepta que el código fuente de los 8 bots
 participantes en la segunda fase se haga público. Para ello, al finalizar la competición,
 el código se añadirá a este repositorio con la atribución correcta. 

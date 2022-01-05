@@ -16,7 +16,7 @@ from Game.BriscaGame import BriscaGame
 
 
 # ---------------------------------------------------------------------------
-# MAIN: Play just one game between two players
+# Play just one game between two players
 # When the game ends, game_state.winner has the player id of the winner (0 or 1)
 # ---------------------------------------------------------------------------
 if __name__ == '__main__':

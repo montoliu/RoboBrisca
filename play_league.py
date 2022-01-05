@@ -47,7 +47,7 @@ if __name__ == '__main__':
     save_game = True         # If the game is saved to be studied in the future True/False
     save_name = "Out/game"
     n_matches = 10           # Matches between two bots
-    sleep_time = 0           # time to sleep between games, It's just to add excitement for public watching the games
+    sleep_time = 2           # time to sleep between games, It's just to add excitement for public watching the games
 
     game = BriscaGame()             # Game class
     game_state = GameState()        # Game state of the game
