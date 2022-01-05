@@ -45,7 +45,7 @@ tiene que ser estudiante de la *Universitat Jaume I*.
 
 ## Reglas de la competición
 
-1. Para apuntarse a la competición hay que rellenar el  [formulario](https://docs.google.com/forms/d/e/1FAIpQLSdiUecE8NYsYwotRr9MYFWg0KkM3lpZ66PAHdpRhOuf04agIw/viewform?usp=sf_link]).
+1. Para apuntarse a la competición hay que rellenar el siguiente [formulario](https://docs.google.com/forms/d/e/1FAIpQLSdiUecE8NYsYwotRr9MYFWg0KkM3lpZ66PAHdpRhOuf04agIw/viewform?usp=sf_link]).
 2. Antes de la fecha límite, los equipos apuntados tendrán que enviar, a la dirección
 de correo [montoliu@uji.es](), un programa escrito en *Python 3*. El nombre de fichero tienen
 que tener el siguiente formato: "equipo.py", donde *equipo* es el nombre del equipo. 
@@ -163,7 +163,7 @@ estado del juego. Esto quiere decir que será posible acceder a:
 3. El resto de partes del estado del juego, como las cartas de los otros
 jugadores y las cartas en la baraja, se pueden acceder desde **observation**,
 pero serán una posible configuración de todas las posibles existentes,
-no reflejando el estado actual de la partida.
+no reflejando el estado real de la partida.
 4. La función **get_list_actions()** de la variable **observation** devuelve
 una lista con todas las posibles acciones que se pueden realizar. 
 
