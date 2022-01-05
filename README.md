@@ -27,7 +27,7 @@ La competición está abierta a todo el que quiera participar.
 Se puede participar tanto de forma individual, como en equipo.
 
 ## Cómo participar
-Para participar hay que rellenar el siguiente [formulario](https://forms.gle/zapBLhLhWcSuQ1mm6]) donde
+Para participar hay que rellenar el siguiente [formulario](https://docs.google.com/forms/d/e/1FAIpQLSdiUecE8NYsYwotRr9MYFWg0KkM3lpZ66PAHdpRhOuf04agIw/viewform?usp=sf_link]) donde
 se deberá especificar los siguiente datos:
 - El nombre del equipo.
 - El nombre de los integrantes del equipo y si son de la *Universitat Jaume I* o no.
@@ -45,7 +45,7 @@ tiene que ser estudiante de la *Universitat Jaume I*.
 
 ## Reglas de la competición
 
-1. Para apuntarse a la competición hay que rellenar el  [formulario](https://forms.gle/zapBLhLhWcSuQ1mm6]).
+1. Para apuntarse a la competición hay que rellenar el  [formulario](https://docs.google.com/forms/d/e/1FAIpQLSdiUecE8NYsYwotRr9MYFWg0KkM3lpZ66PAHdpRhOuf04agIw/viewform?usp=sf_link]).
 2. Antes de la fecha límite, los equipos apuntados tendrán que enviar, a la dirección
 de correo [montoliu@uji.es](), un programa escrito en *Python 3*. El nombre de fichero tienen
 que tener el siguiente formato: "equipo.py", donde *equipo* es el nombre del equipo. 
