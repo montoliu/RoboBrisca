@@ -10,6 +10,7 @@ from Game.BriscaGame import BriscaGame
 from Game.GameState import GameState
 from Game.Heuristic import Heuristic
 from Players.AlwaysFirstPlayer import AlwaysFirstPlayer
+from Players.OSLAPlayer import OSLAPlayer
 from Players.RandomPlayer import RandomPlayer
 
 
@@ -46,15 +47,15 @@ if __name__ == '__main__':
     controlling_time = True  # If the player time to think is going to be controlled True/False
     save_game = True         # If the game is saved to be studied in the future True/False
     save_name = "Out/game"
-    n_matches = 10           # Matches between two bots
-    sleep_time = 2           # time to sleep between games, It's just to add excitement for public watching the games
+    n_matches = 10          # Matches between two bots
+    sleep_time = 0           # time to sleep between games, It's just to add excitement for public watching the games
 
     game = BriscaGame()             # Game class
     game_state = GameState()        # Game state of the game
     heuristic = Heuristic()         # Heuristic to known how good is to be in a particular game state
     forward_model = ForwardModel()  # Rules of the game
 
-    l_players = [AlwaysFirstPlayer(), RandomPlayer()]  # List of players of the competition
+    l_players = [RandomPlayer(), OSLAPlayer()]  # List of players of the competition
     print_information(n_matches, l_players)
 
     l_points = [0.0 for i in range(len(l_players))]   # 0.0 points for each player
@@ -73,7 +74,7 @@ if __name__ == '__main__':
             for n in range(n_matches):
                 # player i as first
                 sleep(sleep_time)
-                game.reset(game_state, 0)
+                game.reset(game_state, 0)  # p1 plays as first
                 if save_game:
                     fname = save_name + "_" + str(i) + "_" + str(j) + "_" + str(n) + ".txt"
                     game.save_game_on(fname)
@@ -84,7 +85,7 @@ if __name__ == '__main__':
 
                 # player j as first
                 sleep(sleep_time)
-                game.reset(game_state, 1)
+                game.reset(game_state, 1)  # p2 plays as first
                 if save_game:
                     fname = save_name + "_" + str(j) + "_" + str(i) + "_" + str(n) + ".txt"
                     game.save_game_on(fname)
