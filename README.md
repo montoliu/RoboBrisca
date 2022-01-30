@@ -30,7 +30,7 @@ Se puede participar tanto de forma individual, como en equipo.
 Para participar hay que rellenar el siguiente [formulario](https://docs.google.com/forms/d/e/1FAIpQLSdiUecE8NYsYwotRr9MYFWg0KkM3lpZ66PAHdpRhOuf04agIw/viewform?usp=sf_link]) donde
 se deberá especificar los siguiente datos:
 - El nombre del equipo.
-- El nombre de los integrantes del equipo y si tiene alguna relación con la *Universitat Jaume I*.
+- El nombre de los integrantes del equipo y si tienen alguna relación con la *Universitat Jaume I*.
 - Una dirección email de contacto.
 
 ## Premios
@@ -134,7 +134,7 @@ consultar [https://es.wikipedia.org/wiki/Brisca](https://es.wikipedia.org/wiki/B
 Para implementar un bot hay que crear un fichero con el nombre del bot y 
 situarlo dentro de la carpeta _Players_. Por ejemplo, si el 
 equipo se llama _IALovers_, el bot se puede llamar _IALoversPlayer.py_. Dentro del fichero
-se debe crear una clase con el mismo nombre que heredará de la clase _Player_ y que debe seguir
+se debe crear una clase con el mismo nombre que heredará de la clase ```Player``` y que debe seguir
 la siguiente plantilla:
 
 ```Python
@@ -151,20 +151,20 @@ class IALoversPlayer(Player):
         return "IALoversPlayer"
 ```
 Hay dos cosas importantes que debes tener en cuenta:
-1. La función **think** debe devolver una acción antes del número de segundos
+1. La función ```think``` debe devolver una acción antes del número de segundos
 indicados en budget. Si tarda más, el sistema seleccionará una acción al
 azar de entre las posibles y no hará caso a tu código.
-2. La variable **observation** es la visión desde el punto de vista del jugador del 
+2. La variable ```observation``` es la visión desde el punto de vista del jugador del 
 estado del juego. Esto quiere decir que será posible acceder a:
 - Las cartas del jugador.
 - Las cartas que ha ganado cada jugador.
 - La carta que es triunfo.
 - Las cartas jugadas en la mano actual.
 3. El resto de partes del estado del juego, como las cartas de los otros
-jugadores y las cartas en la baraja, se pueden acceder desde **observation**,
+jugadores y las cartas en la baraja, se pueden acceder desde ```observation```,
 pero serán una posible configuración de todas las posibles existentes,
 no reflejando el estado real de la partida.
-4. La función **get_list_actions()** de la variable **observation** devuelve
+4. La función ```get_list_actions()``` de la variable *```observation*``` devuelve
 una lista con todas las posibles acciones que se pueden realizar. 
 
 Una vez creada la clase, hay que ir al programa **play_match.py** y en la línea donde se asigna
@@ -183,15 +183,15 @@ en la lista ```l_players```. Es el programa que se usará en la competición.
 ## Breve explicación del código fuente
 Programas principales:
 - **play_match**: Programa principal que permite partidas entre dos bots. Para
-especificar los bots que jugarán la partida, hay que rellenar la lista *l_players* con el contructor de los bots.
+especificar los bots que jugarán la partida, hay que rellenar la lista ```l_players``` con el contructor de los bots.
 - **play_league**: Programa principal que permite una competición entre varios bots. Este será
 el programa que se usará para ejecutar la competición.  Para
 especificar los bots que jugarán la competición, 
-hay que rellenar la lista *l_players* con el constructor de los bots.
+hay que rellenar la lista ```l_players``` con el constructor de los bots.
 
 
 Las variables más importantes que controlan las partidas son:
-- **budget**: Es el tiempo en segundos que tiene el bot para pensar (en la función *think* del Player).
+- **budget**: Es el tiempo en segundos que tiene el bot para pensar (en la función ```think``` del Player).
 Este tiempo se establecerá en 1 segundo en ambas fases de la competición.
 - **verbose**: *True/False*. Si es *True* mostrará mensajes por la consola.
 - **controlling_time**: *True/False*. Si es *True* controla el tiempo que tiene el bot para pensar. 
@@ -210,7 +210,7 @@ para testear que pasa cuando el jugador tarda más tiempo del requerido.
 - **OSLAPLayer**: Este bot usa una estrategia *One Step Looking ahead*. Para ello,
 internamente crea un ```ForwardModel``` y una ```Heuristic``` y para cada una de las
 posibles acciones posibles (i.e. para cada una de las carta que se pueden jugar), 
-avanza el juego (usando el método ```play``` del ```ForwardModel```) y obtiene un valor
+avanza el juego (usando el método ```play``` del ```ForwardModel``` y la acción correspondiente) y obtiene un valor
 de lo bueno o malo que es estar en el nuevo estado (tras la ejecución de la acción).
 Lo bueno o malo se sabe gracias a la heurística (```Heuristic```).
 La acción seleccionada es aquella que obtiene mejor valor.
