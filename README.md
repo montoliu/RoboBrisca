@@ -30,18 +30,18 @@ Se puede participar tanto de forma individual, como en equipo.
 Para participar hay que rellenar el siguiente [formulario](https://docs.google.com/forms/d/e/1FAIpQLSdiUecE8NYsYwotRr9MYFWg0KkM3lpZ66PAHdpRhOuf04agIw/viewform?usp=sf_link]) donde
 se deberá especificar los siguiente datos:
 - El nombre del equipo.
-- El nombre de los integrantes del equipo y si son de la *Universitat Jaume I* o no.
+- El nombre de los integrantes del equipo y si tiene alguna relación con la *Universitat Jaume I*.
 - Una dirección email de contacto.
 
 ## Premios
 Todas las personas que participen recibirán un certificado acreditando su participación.
-Los equipos que queden clasificados en los tres primeros puestos recibirán además un diploma acreditativo.
+Los equipos que queden clasificados en los tres primeros puestos recibirán, además, un diploma acreditativo.
 
 Además, existirá un premio, que será anunciado en el futuro, para los tres primeros equipos
 de la competición. 
 
-**IMPORTANTE**: Para obtar al premio, al menos un integrante de equipo
-tiene que ser estudiante de la *Universitat Jaume I*.
+**IMPORTANTE**: Para obtar a un premio, al menos un integrante del equipo
+tiene que tener algún tipo de relación con la *Universitat Jaume I*.
 
 ## Reglas de la competición
 
@@ -167,15 +167,18 @@ no reflejando el estado real de la partida.
 4. La función **get_list_actions()** de la variable **observation** devuelve
 una lista con todas las posibles acciones que se pueden realizar. 
 
-Una vez creada la clase, hay que ir al programa **play_match.py** y en la línea 38,
-reemplazar _RandomPlayer()_ o _AlwaysFirstPlayer()_, por el constructor de tu bot. Por ejemplo,
-si queremos probar el bot _IALoversPlayer_ contra _RandomPlayer()_, la línea 38 deberá ser:
-```python
+Una vez creada la clase, hay que ir al programa **play_match.py** y en la línea donde se asigna
+a ```l_players``` los dos bots que jugarán la partida, reemplazar uno de los dos, por el constructor de tu bot. Por ejemplo,
+si queremos probar el bot _IALoversPlayer_ contra _RandomPlayer()_, la línea debería ser:
+```
 l_players = [IALoversPlayer(), AlwaysFirstPlayer()] 
 ```
 
 Finalmente, ejecutamos el programa **play_match.py** para probar el funcionamiento del
 bot implementado.
+
+El programa **play_league.py** permite jugar ```n_matches``` partidas entre los dos bots incluidos
+en la lista ```l_players```. Es el programa que se usará en la competición.
 
 ## Breve explicación del código fuente
 Programas principales:
@@ -184,14 +187,15 @@ especificar los bots que jugarán la partida, hay que rellenar la lista *l_playe
 - **play_league**: Programa principal que permite una competición entre varios bots. Este será
 el programa que se usará para ejecutar la competición.  Para
 especificar los bots que jugarán la competición, 
-hay que rellenar la lista *l_players* con el contructor de los bots.
+hay que rellenar la lista *l_players* con el constructor de los bots.
 
 
 Las variables más importantes que controlan las partidas son:
 - **budget**: Es el tiempo en segundos que tiene el bot para pensar (en la función *think* del Player).
 Este tiempo se establecerá en 1 segundo en ambas fases de la competición.
 - **verbose**: *True/False*. Si es *True* mostrará mensajes por la consola.
-- **controlling_time**: *True/False*. Si es *True* controla el tiempo que tiene el bot para pensar.
+- **controlling_time**: *True/False*. Si es *True* controla el tiempo que tiene el bot para pensar. 
+En la competición estará a *True*.
 - **save_game**: *True/False*. Si es *True* guarda en un fichero la partida para su estudio posterior.
 - **save_name**: Nombre del fichero donde se guardará la partida.
 - **n_matches**: En *play_league*, número de partidas entre los bots que participan en la competicion.
@@ -203,20 +207,27 @@ Bots implementados (en la carpeta Players):
 para testear que pasa cuando el jugador tarda más tiempo del requerido.
 - **HumanPlayer**: Muestra una interfaz texto para un jugador humano seleccione la accion a realizar.
 - **AlwaysFirstPlayer**: Siempre juega la primera acción de la lista de posibles acciones del juego.
+- **OSLAPLayer**: Este bot usa una estrategia *One Step Looking ahead*. Para ello,
+internamente crea un ```ForwardModel``` y una ```Heuristic``` y para cada una de las
+posibles acciones posibles (i.e. para cada una de las carta que se pueden jugar), 
+avanza el juego (usando el método ```play``` del ```ForwardModel```) y obtiene un valor
+de lo bueno o malo que es estar en el nuevo estado (tras la ejecución de la acción).
+Lo bueno o malo se sabe gracias a la heurística (```Heuristic```).
+La acción seleccionada es aquella que obtiene mejor valor.
 
 Clases del juego (en la carpeta Game):
-- **Action**: Acción que puede eleguir un jugador.
+- **Action**: Acción que puede elegir un jugador.
 - **Card**: Cartas del juego.
 - **CardCollection**: Colección de cartas. Se incluyen funciones para barajar, repartir, etc.
 - **Common**: Código común para varias clases del juego
-- **Hueristic**: Contiene la función _get_score_ que dado un estado del juego, devuelve
-los puntos que obtiene un jugador. 
+- **Hueristic**: Contiene la función ```get_score``` que dado un estado del juego, devuelve
+una estimación de lo bueno o malo que es estar en ese estado. 
 - **ForwardModel**: Implementa las reglas del juego. La función más importante
-es _play_ que actualiza el estado del juego según la acción realizada por el jugador.
+es ```play``` que actualiza el estado del juego según la acción realizada por el jugador.
 - **GameState**: Implementa el estado del juego.
 - **Observation**: Implementa la versión visible del estado del juego. Las partes
 no visibles se pueden acceder pero muestran una posible configuración de todas las
-exsitentes que no se corresponde con el estado real.
+existentes que no se corresponde con el estado real.
 - **BriscaGame**: Clase principal del juego.
 
 ## Contacto
