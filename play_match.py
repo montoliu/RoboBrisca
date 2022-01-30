@@ -23,7 +23,7 @@ from Game.BriscaGame import BriscaGame
 if __name__ == '__main__':
     budget = 1                  # Time to think for AI in second
     verbose = True              # print messages ON/OFF
-    controlling_time = False    # If the player time to think is going to be controlled (True/False)
+    controlling_time = True    # If the player time to think is going to be controlled (True/False)
     save_game = True            # If the game is saved to be studied in the future (True/False)
     save_name = "Out/game.txt"  # Filename when the game is going to be saved
 

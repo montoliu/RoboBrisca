@@ -23,6 +23,7 @@ class BriscaGame:
         game_state.n_players = 4
 
         # create empty hands
+        game_state.hands.clear()
         for p in range(game_state.n_players):
             hand = CardCollection()
             game_state.hands.append(hand)
@@ -64,6 +65,8 @@ class BriscaGame:
 
         if self.save_game:
             self.save_file.write(str(game_state.main_deck) + ", " + str(game_state.turn) + "\n")
+            for hand in game_state.hands:
+                self.save_file.write(str(hand) + "\n")
 
         # run players' turns while game is not finished
         while not game_state.is_terminal():

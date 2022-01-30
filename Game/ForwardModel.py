@@ -20,7 +20,7 @@ class ForwardModel:
         gs.hands[gs.turn].remove(card)   # Remove card from player hand
         gs.playing_cards.add_card(card)  # add to playing cards
 
-        reward = ht.get_score(gs, actual_player)   # Estimate the reward
+        reward = ht.get_score(gs, actual_player)   # Estimate the reward.
 
         # if it is the fouth, check who is the winner of this round and move cards to won set
         if gs.playing_cards.len() == 4:
