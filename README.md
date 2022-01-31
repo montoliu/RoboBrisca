@@ -38,9 +38,10 @@ Todas las personas que participen recibirán un certificado acreditando su parti
 Los equipos que queden clasificados en los tres primeros puestos recibirán, además, un diploma acreditativo.
 
 ![catness](logocatness.png)  
+
 Además, existirá un premio especial para el equipo ganador, patrocinado por [Catness Game Studies](http://catnessgames.com/),  
 que consistirá en el código de acceso a uno de sus juegos y en una visita a sus instalaciones
-para conocer como funciona un estudio de videojuegos. | 
+para conocer como funciona un estudio de videojuegos. 
 
 **IMPORTANTE**: Para obtar a un premio, al menos un integrante del equipo
 tiene que tener algún tipo de relación con la *Universitat Jaume I*.
