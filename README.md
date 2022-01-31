@@ -38,8 +38,6 @@ Todas las personas que participen recibirán un certificado acreditando su parti
 Los equipos que queden clasificados en los tres primeros puestos recibirán, además, un diploma acreditativo.
 
 
-![catness](catness.png)
-
 ![catness2](catness2.png)
 
 Además, existirá un premio especial para el equipo ganador, patrocinado por [Catness Game Studies](http://catnessgames.com/),  
