@@ -96,3 +96,6 @@ class ForwardModel:
                 game_state.winner = 0
             else:
                 game_state.winner = 1
+
+    def get_points_player(self, player_id, game_state):
+        return calculate_points(game_state.won_cards[player_id].get_cards())

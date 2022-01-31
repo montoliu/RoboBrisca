@@ -63,10 +63,12 @@ class BriscaGame:
         # Brisca is a 4 players game, then 1st bot acts as player 0 and 2, and 2nd one acts as 1 and 3.
         players = [l_players[0], l_players[1], l_players[0], l_players[1]]
 
+        save_str = ""
         if self.save_game:
-            self.save_file.write(str(game_state.main_deck) + ", " + str(game_state.turn) + "\n")
+            save_str += str(game_state.turn) + "\n"
+            save_str += str(game_state.main_deck) + "\n"
             for hand in game_state.hands:
-                self.save_file.write(str(hand) + "\n")
+                save_str += str(hand) + "\n"
 
         # run players' turns while game is not finished
         while not game_state.is_terminal():
@@ -77,13 +79,20 @@ class BriscaGame:
                                                   budget, verbose, controlling_time)
 
                 if self.save_game:
-                    self.save_file.write(str(prev_turn) + ", " + str(action) + ", " + str(reward) + "\n")
+                    save_str += str(prev_turn) + ", " + str(action) + ", " + str(reward) + "\n"
 
                 if game_state.is_terminal():
                     break
 
         forward_model.check_winner(game_state)
-        self.save_file.close()
+
+        if self.save_game:
+            for i in range (game_state.n_players):
+                save_str += str(forward_model.get_points_player(i, game_state)) + "\n"
+
+        if self.save_game:
+            self.save_file.write(save_str)
+            self.save_file.close()
 
     # ---------------------------------------------------------------------------
     # Performs a player turn

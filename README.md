@@ -37,11 +37,10 @@ se deberá especificar los siguiente datos:
 Todas las personas que participen recibirán un certificado acreditando su participación.
 Los equipos que queden clasificados en los tres primeros puestos recibirán, además, un diploma acreditativo.
 
-![catness](logocatness.png)
-
+![catness](logocatness.png)  
 Además, existirá un premio especial para el equipo ganador, patrocinado por [Catness Game Studies](http://catnessgames.com/),  
 que consistirá en el código de acceso a uno de sus juegos y en una visita a sus instalaciones
-para conocer como funciona un estudio de videojuegos.
+para conocer como funciona un estudio de videojuegos. | 
 
 **IMPORTANTE**: Para obtar a un premio, al menos un integrante del equipo
 tiene que tener algún tipo de relación con la *Universitat Jaume I*.
@@ -232,6 +231,27 @@ es ```play``` que actualiza el estado del juego según la acción realizada por 
 no visibles se pueden acceder pero muestran una posible configuración de todas las
 existentes que no se corresponde con el estado real.
 - **BriscaGame**: Clase principal del juego.
+
+## Formato fichero partida
+El formato del fichero que resume la partida es el siguiente:
+
+ Línea | Contenido 
+----------|--------------
+1| Número indicando que jugador empieza (0 a 3)
+2| Contenido de la baraja tras repartir las cartas. La primera carta es la primera en el mazo
+3| Mano inicial del jugador 0
+4| Mano inicial del jugador 1
+5| Mano inicial del jugador 2
+6| Mano inicial del jugador 3
+7 a 46| Acción realizada: jugador, carta jugada, recompensa
+47 | puntos obtenidos por el jugador 0
+48 | puntos obtenidos por el jugador 1
+49 | puntos obtenidos por el jugador 2
+50 | puntos obtenidos por el jugador 3
+
+En las líneas 7 a 46, la recomensa es el valor que devuelve la función ```play``` 
+del ```ForwardModel``` usado, que a su vez, usa la clase ```Heuristic``` proporcionada para
+estimar ese valor.
 
 ## Contacto
 Para obtener más información, enviar un email a [montoliu@uji.es]().
