@@ -104,7 +104,7 @@ Entonces, se mira quien es el ganador siguiendo las siguientes normas:
 - En caso de que se jueguen cartas de diferente palo que no sean triunfo, gana el que haya puesto la carta más alta del palo del que haya echado la primera carta.
 - En caso de que alguien juegue un triunfo, gana el que haya echado el triunfo más alto, independientemente del valor de las cartas de otro palo que se hayan echado.
 
-El valor de las cartas es, de mejor a peor: as, 3, rey, caballo, sota, 7, 6, 5, 4, 3 y 2.
+El valor de las cartas es, de mejor a peor: as, 3, rey, caballo, sota, 7, 6, 5, 4 y 2.
 
 Tras esto, el jugador que haya ganado la mano recoge las cartas 
 y las coloca boca abajo frente a sí. Después los jugadores roban una carta del mazo 
@@ -134,6 +134,18 @@ Para una descripción completa del juego,
 consultar [https://es.wikipedia.org/wiki/Brisca](https://es.wikipedia.org/wiki/Brisca)
 
 ## Como realizar mi primer bot
+En primer lugar tienes que clonar este repositorio en tu sistema. Posiblemente
+tengas que instalar el paquete de python 
+```func_timeout``` (por ejemplo usando el comando ```pip install func_timeout```).
+También tendrás que crear una carpeta ```Out``` que es donde se guardarán los ficheros
+con la información de las partidas.
+
+Una vez realizados los pasos anteriores, prueba ejecutar el programa ```play_match.py```.
+Según el IDE que uses, es posible que tengas que cambiar las referencias a las clases del código.
+Nosotros recomendamos el IDE **Pycharm** (si eres estudiante de la Uji puedes obtener una licencia gratuita). 
+Pero cualquier otro IDE es también válido.
+Si tienes algún problema,no dudes en contactar con nosotros y te ayudaremos en este proceso.
+
 Para implementar un bot hay que crear un fichero con el nombre del bot y 
 situarlo dentro de la carpeta _Players_. Por ejemplo, si el 
 equipo se llama _IALovers_, el bot se puede llamar _IALoversPlayer.py_. Dentro del fichero
