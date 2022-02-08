@@ -3,7 +3,7 @@
 # - BriscaGame
 # - Implemented by: Raul Montoliu (Dic 2021)
 # --------------------------------------------------------
-
+import copy
 import random
 import func_timeout
 
@@ -61,7 +61,9 @@ class BriscaGame:
     # run the game
     def run(self, game_state, forward_model, heuristic, l_players, budget, verbose, controlling_time):
         # Brisca is a 4 players game, then 1st bot acts as player 0 and 2, and 2nd one acts as 1 and 3.
-        players = [l_players[0], l_players[1], l_players[0], l_players[1]]
+        pl2 = copy.deepcopy(l_players[0])  # anticheating
+        pl3 = copy.deepcopy(l_players[1])  # anticheating
+        players = [l_players[0], l_players[1], pl2, pl3]
 
         save_str = ""
         if self.save_game:

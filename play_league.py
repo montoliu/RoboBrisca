@@ -55,7 +55,7 @@ if __name__ == '__main__':
     heuristic = Heuristic()         # Heuristic to known how good is to be in a particular game state
     forward_model = ForwardModel()  # Rules of the game
 
-    l_players = [RandomPlayer(), AlwaysFirstPlayer()]  # List of players of the competition
+    l_players = [RandomPlayer(), OSLAPlayer()]  # List of players of the competition
     print_information(n_matches, l_players)
 
     l_points = [0.0 for i in range(len(l_players))]   # 0.0 points for each player
@@ -65,7 +65,7 @@ if __name__ == '__main__':
         p1 = l_players[i]
         for j in range(i+1, len(l_players)):
             p2 = l_players[j]
-            players = [p1, p2, p1, p2]          # Brisca is a game for 4 players
+            players = [p1, p2]          # Brisca is a game for 4 players
 
             # player ith vs jth
             print("-----------------------------------")
