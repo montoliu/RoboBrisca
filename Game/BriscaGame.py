@@ -65,6 +65,9 @@ class BriscaGame:
 
         save_str = ""
         if self.save_game:
+            for pl in players:
+                save_str += str(pl) + " "
+            save_str += "\n"
             save_str += str(game_state.turn) + "\n"
             save_str += str(game_state.main_deck) + "\n"
             for hand in game_state.hands:
@@ -79,7 +82,7 @@ class BriscaGame:
                                                   budget, verbose, controlling_time)
 
                 if self.save_game:
-                    save_str += str(prev_turn) + ", " + str(action) + ", " + str(reward) + "\n"
+                    save_str += str(prev_turn) + " " + str(action) + " " + str(reward) + "\n"
 
                 if game_state.is_terminal():
                     break
@@ -88,7 +91,7 @@ class BriscaGame:
 
         if self.save_game:
             for i in range (game_state.n_players):
-                save_str += str(forward_model.get_points_player(i, game_state)) + "\n"
+                save_str += str(forward_model.get_points_player(i, game_state)) + " "
 
         if self.save_game:
             self.save_file.write(save_str)

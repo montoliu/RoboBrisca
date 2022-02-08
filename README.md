@@ -250,17 +250,15 @@ El formato del fichero que resume la partida es el siguiente:
 
  Línea | Contenido 
 ----------|--------------
-1| Número indicando que jugador empieza (0 a 3)
-2| Contenido de la baraja tras repartir las cartas. La primera carta es la primera en el mazo
-3| Mano inicial del jugador 0
-4| Mano inicial del jugador 1
-5| Mano inicial del jugador 2
-6| Mano inicial del jugador 3
-7 a 46| Acción realizada: jugador, carta jugada, recompensa
-47 | puntos obtenidos por el jugador 0
-48 | puntos obtenidos por el jugador 1
-49 | puntos obtenidos por el jugador 2
-50 | puntos obtenidos por el jugador 3
+1| Nombre de los bots
+2| Número indicando que jugador empieza (0 a 3)
+3| Contenido de la baraja tras repartir las cartas. La primera carta es la primera en el mazo
+4| Mano inicial del jugador 0
+5| Mano inicial del jugador 1
+6| Mano inicial del jugador 2
+7| Mano inicial del jugador 3
+8 a 47| Acción realizada: jugador, carta jugada, recompensa
+48 | Puntos obtenidos por los jugadores (empezando por el 0)
 
 En las líneas 7 a 46, la recomensa es el valor que devuelve la función ```play``` 
 del ```ForwardModel``` usado, que a su vez, usa la clase ```Heuristic``` proporcionada para
