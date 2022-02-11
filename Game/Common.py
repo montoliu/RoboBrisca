@@ -17,23 +17,33 @@ def is_better_card(actual_card, prev_card, trump_card, round_card):
     if actual_card.get_type() == trump_card.get_type() and prev_card.get_type() == trump_card.get_type():
         if actual_card.get_value() > prev_card.get_value():
             return True
+        elif actual_card.get_value() == prev_card.get_value(): # both 0 value e.g. E4 and E6
+            return actual_card.card_number > prev_card.card_number
         else:
             return False
-    elif actual_card.get_type() == trump_card.get_type():
+    elif actual_card.get_type() == trump_card.get_type():  # actual is trump, prev not
         return True
-    elif prev_card.get_type() == trump_card.get_type():
+    elif prev_card.get_type() == trump_card.get_type():    # prev is trump, actual not
         return False
-    elif actual_card.get_type() == round_card.get_type() and prev_card.get_type() == round_card.get_type():
+
+    # boths cards are round type
+    if actual_card.get_type() == round_card.get_type() and prev_card.get_type() == round_card.get_type():
         if actual_card.get_value() > prev_card.get_value():
             return True
+        elif actual_card.get_value() == prev_card.get_value():  # both 0 value e.g. E4 and E6
+            return actual_card.card_number > prev_card.card_number
         else:
             return False
-    elif actual_card.get_type() == round_card.get_type():
+    elif actual_card.get_type() == round_card.get_type():  # actual is round, prev not
         return True
-    elif prev_card.get_type() == round_card.get_type():
+    elif prev_card.get_type() == round_card.get_type(): # prev is round, actual not
         return False
+
     if actual_card.get_value() > prev_card.get_value():
         return True
+    elif actual_card.get_value() == prev_card.get_value():  # both 0 value e.g. E4 and E6
+        return actual_card.card_number > prev_card.card_number
+
     return False
 
 
