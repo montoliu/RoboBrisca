@@ -23,7 +23,7 @@ class GameState:
     # non observable parts are randomized
     def get_observation(self):
         l_all_cards = []
-        l_all_cards.extend(self.main_deck.get_cards())
+        l_all_cards.extend(self.main_deck.get_cards_less_last())  # last one is the trump one
         for p in range(self.n_players):
             if p != self.turn:
                 l_all_cards.extend(self.hands[p].get_cards())
@@ -48,6 +48,10 @@ class GameState:
                 for i in range(n):
                     card = self.hands[p].get_card(i)
                     randomized_hands[p].add_card(card)
+
+        # add trump card
+        if not self.main_deck.empty():
+            randomized_main_deck.add_card(self.trump_card)
 
         obs = Observation(randomized_main_deck, randomized_hands, self.trump_card,
                           self.won_cards, self.turn, self.n_players, self.playing_cards, self.winner)

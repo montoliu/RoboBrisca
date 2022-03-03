@@ -40,6 +40,9 @@ class CardCollection:
     def get_cards(self):
         return self.l_cards
 
+    def get_cards_less_last(self):
+        return self.l_cards[:len(self.l_cards)-1]
+
     def get_card(self, ith):
         return self.l_cards[ith]
 
