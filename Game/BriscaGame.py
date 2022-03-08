@@ -38,6 +38,7 @@ class BriscaGame:
         game_state.trump_card = game_state.main_deck.get_last_card()
 
         # cleate empty won cards
+        game_state.won_cards.clear()
         for p in range(game_state.n_players):
             won = CardCollection()
             game_state.won_cards.append(won)
