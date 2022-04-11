@@ -10,6 +10,10 @@ from Game.BriscaGame import BriscaGame
 from Game.GameState import GameState
 from Game.Heuristic import Heuristic
 from Players.AlwaysFirstPlayer import AlwaysFirstPlayer
+from Players.Bot1 import Bot1
+from Players.Bot2 import Bot2
+from Players.Bot3 import Bot3
+from Players.Bot4 import Bot4
 from Players.OSLAPlayer import OSLAPlayer
 from Players.RandomPlayer import RandomPlayer
 
@@ -45,7 +49,7 @@ if __name__ == '__main__':
     budget = 1               # Time to think for AI in second
     verbose = False          # print messages ON/OFF
     controlling_time = True  # If the player time to think is going to be controlled True/False
-    save_game = True         # If the game is saved to be studied in the future True/False
+    save_game = False        # If the game is saved to be studied in the future True/False
     save_name = "Out/game"
     n_matches = 10          # Matches between two bots
     sleep_time = 0           # time to sleep between games, It's just to add excitement for public watching the games
@@ -55,7 +59,7 @@ if __name__ == '__main__':
     heuristic = Heuristic()         # Heuristic to known how good is to be in a particular game state
     forward_model = ForwardModel()  # Rules of the game
 
-    l_players = [RandomPlayer(), OSLAPlayer()]  # List of players of the competition
+    l_players = [Bot4("NN/bot4_1e4.nn"), OSLAPlayer()]  # List of players of the competition
     print_information(n_matches, l_players)
 
     l_points = [0.0 for i in range(len(l_players))]   # 0.0 points for each player
@@ -76,7 +80,7 @@ if __name__ == '__main__':
                 sleep(sleep_time)
                 game.reset(game_state, 0)  # p1 plays as first
                 if save_game:
-                    fname = save_name + "_" + str(i) + "_" + str(j) + "_" + str(n) + ".txt"
+                    fname = save_name + "_" + str(2*n) + ".txt"
                     game.save_game_on(fname)
 
                 game.run(game_state, forward_model, heuristic, players, budget, verbose, controlling_time)
@@ -87,7 +91,7 @@ if __name__ == '__main__':
                 sleep(sleep_time)
                 game.reset(game_state, 1)  # p2 plays as first
                 if save_game:
-                    fname = save_name + "_" + str(j) + "_" + str(i) + "_" + str(n) + ".txt"
+                    fname = save_name + "_" + str(2*n+1) + ".txt"
                     game.save_game_on(fname)
 
                 game.run(game_state, forward_model, heuristic, players, budget, verbose,controlling_time)
